@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
-# Cookbook Name:: skype-app
-# Recipe:: default
+# Cookbook Name:: skype
+# Library:: provider_mapping
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,6 +18,10 @@
 # limitations under the License.
 #
 
-skype_app 'default' do
-  action :install
-end
+require 'chef/dsl'
+require 'chef/platform/provider_mapping'
+require_relative 'provider_skype_app'
+
+Chef::Platform.set(platform: :mac_os_x,
+                   resource: :skype_app,
+                   provider: Chef::Provider::SkypeApp::MacOsX)

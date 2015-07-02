@@ -1,3 +1,9 @@
 ---
 driver:
   name: digitalocean
+  region: nyc3
+
+platforms:
+  - name: macosx
+    driver:
+      name: localhost
