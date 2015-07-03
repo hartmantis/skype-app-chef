@@ -25,3 +25,6 @@ require_relative 'provider_skype_app'
 Chef::Platform.set(platform: :mac_os_x,
                    resource: :skype_app,
                    provider: Chef::Provider::SkypeApp::MacOsX)
+Chef::Platform.set(platform: :windows,
+                   resource: :skype_app,
+                   provider: Chef::Provider::SkypeApp::Windows)

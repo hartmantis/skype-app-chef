@@ -12,4 +12,5 @@ version          '0.0.1'
 depends          'skype-app'
 
 supports         'mac_os_x'
+supports         'windows'
 # rubocop:enable SingleSpaceBeforeFirstArg

@@ -10,6 +10,8 @@ long_description 'Installs Skype'
 version          '0.0.1'
 
 depends          'dmg', '~> 2.2'
+depends          'windows', '~> 1.37'
 
 supports         'mac_os_x'
+supports         'windows'
 # rubocop:enable SingleSpaceBeforeFirstArg

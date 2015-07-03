@@ -26,6 +26,7 @@ group :test do
   gem 'kitchen-digitalocean', '>= 0.8.0'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'
+  gem 'winrm-transport'
 end
 
 group :integration do
