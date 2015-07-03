@@ -21,6 +21,14 @@ describe 'gimp::provider_mapping' do
   context 'Windows' do
     let(:platform) { :windows }
 
+    it 'uses the Windows app provider' do
+      expect(app_provider).to eq(Chef::Provider::SkypeApp::Windows)
+    end
+  end
+
+  context 'Ubuntu' do
+    let(:platform) { :ubuntu }
+
     it 'has no app provider' do
       expect(app_provider).to eq(nil)
     end

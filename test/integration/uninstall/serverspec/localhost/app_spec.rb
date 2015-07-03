@@ -8,4 +8,10 @@ describe 'skype-app::uninstall::app' do
       expect(subject).not_to be_directory
     end
   end
+
+  describe file('/Program Files (x86)/Skype'), if: os[:family] == 'windows' do
+    it 'does not exist' do
+      expect(subject).not_to be_directory
+    end
+  end
 end

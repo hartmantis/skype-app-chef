@@ -7,3 +7,4 @@ platforms:
   - name: macosx
     driver:
       name: localhost
+  # TODO: - name: windows

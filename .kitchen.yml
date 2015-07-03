@@ -11,6 +11,9 @@ platforms:
       box: roboticcheese/macosx-10.10
       ssh:
         insert_key: false
+  - name: windows-8
+    driver:
+      box: roboticcheese/windows-8
 
 suites:
   - name: default
