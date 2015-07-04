@@ -15,8 +15,8 @@ A Chef cookbook for Skype.
 Requirements
 ============
 
-This cookbook currently supports OS X and Windows only. It uses the dmg and
-windows community cookbooks to enable that platform support.
+This cookbook currently supports OS X, Windows, and Ubuntu. It uses the dmg,
+windows, and apt community cookbooks to enable that platform support.
 
 The provider for Windows requires Chef >= 12.4.0
 
@@ -69,6 +69,10 @@ Provider for Mac OS X platforms.
 ***Chef::Provider::SkypeApp::Windows***
 
 Provider for Windows platforms.
+
+***Chef::Provider::SkypeApp::Ubuntu***
+
+Provider for Ubuntu platforms.
 
 ***Chef::Provider::SkypeApp***
 

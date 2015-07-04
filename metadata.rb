@@ -11,6 +11,7 @@ version          '0.0.1'
 
 depends          'dmg', '~> 2.2'
 depends          'windows', '~> 1.37'
+depends          'apt', '~> 2.7'
 
 supports         'mac_os_x'
 supports         'windows'

@@ -21,6 +21,7 @@
 require 'chef/provider/lwrp_base'
 require_relative 'resource_skype_app'
 require_relative 'provider_skype_app_mac_os_x'
+require_relative 'provider_skype_app_ubuntu'
 require_relative 'provider_skype_app_windows'
 
 class Chef

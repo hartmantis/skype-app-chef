@@ -7,4 +7,5 @@ platforms:
   - name: macosx
     driver:
       name: localhost
+  - name: ubuntu-14-04-x64
   # TODO: - name: windows
