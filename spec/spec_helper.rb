@@ -8,6 +8,7 @@ require 'simplecov-console'
 require 'coveralls'
 require 'tmpdir'
 require 'fileutils'
+require_relative 'support/cookbooks/windows/libraries/windows_helper'
 
 RSpec.configure do |c|
   c.color = true
