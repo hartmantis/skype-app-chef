@@ -32,6 +32,8 @@ class Chef
         PATH ||= ::File.expand_path('/Program Files (x86)/Skype')
         URL ||= 'http://www.skype.com/go/getskype-windows'
 
+        include ::Windows::Helper
+
         private
 
         #
@@ -52,9 +54,26 @@ class Chef
           end
         end
 
-        # TODO: def remove!
         #
-        # The Skype package name includes its version number.
+        # (see SkypeApp#remove!
+        #
+        def remove!
+          installed_skype_packages.each do |p|
+            windows_package p do
+              action :remove
+            end
+          end
+        end
+
+        #
+        # Iterate over all installed packages and return an array of any Skype
+        # package names.
+        #
+        # @return [Array] a list of installed Skype packages
+        #
+        def installed_skype_packages
+          installed_packages.keys.select { |k| k.match(/^Skype. [0-9]/) }
+        end
 
         #
         # Follow URL's redirect and return a final download URL. We need to

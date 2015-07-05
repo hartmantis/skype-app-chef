@@ -40,6 +40,34 @@ describe Chef::Provider::SkypeApp::Windows do
     end
   end
 
+  describe '#remove!' do
+    before(:each) do
+      allow_any_instance_of(described_class)
+        .to receive(:installed_skype_packages).and_return(%w(pkg1 pkg2))
+    end
+
+    it 'removes all the installed Skype packages' do
+      p = provider
+      %w(pkg1 pkg2).each do |pkg|
+        expect(p).to receive(:windows_package).with(pkg).and_yield
+        expect(p).to receive(:action).with(:remove)
+      end
+      p.send(:remove!)
+    end
+  end
+
+  describe '#installed_skype_packages' do
+    before(:each) do
+      allow_any_instance_of(described_class).to receive(:installed_packages)
+        .and_return('Skype™ 1.2' => 'thing', 'Dropbox' => 'stuff')
+    end
+
+    it 'returns only the Skype package(s)' do
+      expected = ['Skype™ 1.2']
+      expect(provider.send(:installed_skype_packages)).to eq(expected)
+    end
+  end
+
   describe '#remote_path' do
     before(:each) do
       allow(Net::HTTP).to receive(:get_response).with(URI(described_class::URL))
