@@ -15,4 +15,5 @@ depends          'apt', '~> 2.7'
 
 supports         'mac_os_x'
 supports         'windows'
+supports         'ubuntu'
 # rubocop:enable SingleSpaceBeforeFirstArg
