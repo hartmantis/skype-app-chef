@@ -31,6 +31,8 @@ class Chef
         PATH ||= '/Applications/Skype.app'
         URL ||= 'http://www.skype.com/go/getskype-macosx'
 
+        provides :skype_app, platform: 'mac_os_x'
+
         private
 
         #

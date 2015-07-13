@@ -34,6 +34,8 @@ class Chef
 
         include ::Windows::Helper
 
+        provides :skype_app, platform: 'windows'
+
         private
 
         #
