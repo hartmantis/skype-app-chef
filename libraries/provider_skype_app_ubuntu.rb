@@ -31,6 +31,8 @@ class Chef
       class Ubuntu < SkypeApp
         include Chef::DSL::IncludeRecipe
 
+        provides :skype_app, platform: 'ubuntu'
+
         private
 
         #

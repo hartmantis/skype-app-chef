@@ -8,6 +8,20 @@ describe Chef::Provider::SkypeApp::Ubuntu do
   let(:new_resource) { Chef::Resource::SkypeApp.new(name, nil) }
   let(:provider) { described_class.new(new_resource, nil) }
 
+  describe '.provides?' do
+    let(:platform) { nil }
+    let(:node) { ChefSpec::Macros.stub_node('node.example', platform) }
+    let(:res) { described_class.provides?(node, new_resource) }
+
+    context 'Ubuntu' do
+      let(:platform) { { platform: 'ubuntu', version: '14.04' } }
+
+      it 'returns true' do
+        expect(res).to eq(true)
+      end
+    end
+  end
+
   describe '#install!' do
     let(:node) { { 'lsb' => { 'codename' => 'testy' } } }
 
