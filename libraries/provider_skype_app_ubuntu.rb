@@ -48,6 +48,12 @@ class Chef
             distribution node['lsb']['codename']
             action :add
           end
+          bash 'enable i386 packages' do
+            code <<-EOS
+              dpkg --add-architecture i386
+              apt-get update
+            EOS
+          end
           package 'skype' do
             action :install
           end
