@@ -5,8 +5,9 @@ require_relative '../../libraries/provider_skype_app_ubuntu'
 
 describe Chef::Provider::SkypeApp::Ubuntu do
   let(:name) { 'default' }
-  let(:new_resource) { Chef::Resource::SkypeApp.new(name, nil) }
-  let(:provider) { described_class.new(new_resource, nil) }
+  let(:run_context) { ChefSpec::SoloRunner.new.converge.run_context }
+  let(:new_resource) { Chef::Resource::SkypeApp.new(name, run_context) }
+  let(:provider) { described_class.new(new_resource, run_context) }
 
   describe '.provides?' do
     let(:platform) { nil }

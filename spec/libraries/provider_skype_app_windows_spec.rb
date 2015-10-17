@@ -5,8 +5,9 @@ require_relative '../../libraries/provider_skype_app_windows'
 
 describe Chef::Provider::SkypeApp::Windows do
   let(:name) { 'default' }
-  let(:new_resource) { Chef::Resource::SkypeApp.new(name, nil) }
-  let(:provider) { described_class.new(new_resource, nil) }
+  let(:run_context) { ChefSpec::SoloRunner.new.converge.run_context }
+  let(:new_resource) { Chef::Resource::SkypeApp.new(name, run_context) }
+  let(:provider) { described_class.new(new_resource, run_context) }
 
   describe 'PATH' do
     it 'returns the app directory' do
