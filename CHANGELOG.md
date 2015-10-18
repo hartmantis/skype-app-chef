@@ -4,6 +4,8 @@ Skype App Cookbook CHANGELOG
 v?.?.? (????-??-??)
 -------------------
 - Update provider resolver to use most current style
+- Fix package installation failures in 64-bit Ubuntu due to the i386 arch not
+  being enabled
 
 v0.1.1 (2015-07-05)
 -------------------
