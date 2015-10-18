@@ -36,35 +36,53 @@ class Chef
         private
 
         #
-        # Enable the APT partner repo and install Skype from it.
+        # Enable the i386 arch and APT partner repo, then install Skype.
         #
         # (see SkypeApp#install!)
         #
         def install!
           include_recipe 'apt'
+          enable_i386_arch!
+          add_repository!
+          package('skype') { action :install }
+        end
+
+        #
+        # Remove the Skype package. At removal time, the APT partner repo and
+        # i386 arch may potentially be depdended on by other packages as well,
+        # so must be left behind.
+        #
+        # (see SkypeApp#remove!)
+        #
+        def remove!
+          package('skype') { action :remove }
+        end
+
+        #
+        # Use an apt_repository resource to enable the Ubuntu partner
+        # repository for the Skype packages.
+        #
+        def add_repository!
           apt_repository 'partner' do
             uri 'http://archive.canonical.com'
             components %w(partner)
             distribution node['lsb']['codename']
             action :add
           end
-          bash 'enable i386 packages' do
-            code <<-EOS
-              dpkg --add-architecture i386
-              apt-get update
-            EOS
-          end
-          package 'skype' do
-            action :install
-          end
         end
 
         #
-        # (see SkypeApp#remove!)
+        # Use an execute resource to ensure the i386 arch required for Skype
+        # for Ubuntu is enabled.
         #
-        def remove!
-          package 'skype' do
-            action :remove
+        def enable_i386_arch!
+          execute 'dpkg --add-architecture i386' do
+            only_if do
+              cmd = 'dpkg --print-architecture; ' \
+                    'dpkg --print-foreign-architectures'
+              !shell_out!(cmd).stdout.lines.include?('i386')
+            end
+            notifies :run, 'execute[apt-get update]', :immediately
           end
         end
       end
