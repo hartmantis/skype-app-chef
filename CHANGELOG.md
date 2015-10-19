@@ -1,6 +1,9 @@
 Skype App Cookbook CHANGELOG
 ============================
 
+v?.?.? (????-??-??)
+-------------------
+
 v0.2.0 (2015-10-18)
 -------------------
 - Update provider resolver to use most current style
