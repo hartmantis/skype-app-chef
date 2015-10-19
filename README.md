@@ -1,12 +1,16 @@
 Skype App Cookbook
 ==================
 [![Cookbook Version](https://img.shields.io/cookbook/v/skype-app.svg)][cookbook]
-[![Build Status](https://img.shields.io/travis/RoboticCheese/skype-app-chef.svg)][travis]
+[![OS X Build Status](https://img.shields.io/travis/RoboticCheese/skype-app-chef.svg)][travis]
+[![Windows Build Status](https://img.shields.io/appveyor/ci/RoboticCheese/skype-app-chef.svg)][appveyor]
+[![Linux Build Status](https://img.shields.io/circleci/project/RoboticCheese/skype-app-chef.svg)][circle]
 [![Code Climate](https://img.shields.io/codeclimate/github/RoboticCheese/skype-app-chef.svg)][codeclimate]
 [![Coverage Status](https://img.shields.io/coveralls/RoboticCheese/skype-app-chef.svg)][coveralls]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/skype-app
 [travis]: https://travis-ci.org/RoboticCheese/skype-app-chef
+[appveyor]: https://ci.appveyor.com/project/RoboticCheese/skype-app-chef
+[circle]: https://circleci.com/gh/RoboticCheese/skype-app-chef
 [codeclimate]: https://codeclimate.com/github/RoboticCheese/skype-app-chef
 [coveralls]: https://coveralls.io/r/RoboticCheese/skype-app-chef
 
