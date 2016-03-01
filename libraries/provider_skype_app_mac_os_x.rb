@@ -28,8 +28,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class MacOsX < SkypeApp
-        PATH ||= '/Applications/Skype.app'
-        URL ||= 'http://www.skype.com/go/getskype-macosx'
+        PATH ||= '/Applications/Skype.app'.freeze
+        URL ||= 'http://www.skype.com/go/getskype-macosx'.freeze
 
         provides :skype_app, platform: 'mac_os_x'
 

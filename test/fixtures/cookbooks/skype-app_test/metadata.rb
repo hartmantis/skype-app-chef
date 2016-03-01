@@ -1,6 +1,5 @@
 # Encoding: UTF-8
-#
-# rubocop:disable SingleSpaceBeforeFirstArg
+
 name             'skype-app_test'
 maintainer       'Jonathan Hartman'
 maintainer_email 'j@p4nt5.com'
@@ -14,4 +13,3 @@ depends          'skype-app'
 supports         'mac_os_x'
 supports         'windows'
 supports         'ubuntu'
-# rubocop:enable SingleSpaceBeforeFirstArg

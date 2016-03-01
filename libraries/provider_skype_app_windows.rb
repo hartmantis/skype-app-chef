@@ -29,8 +29,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class Windows < SkypeApp
-        PATH ||= ::File.expand_path('/Program Files (x86)/Skype')
-        URL ||= 'http://www.skype.com/go/getskype-windows'
+        PATH ||= ::File.expand_path('/Program Files (x86)/Skype').freeze
+        URL ||= 'http://www.skype.com/go/getskype-windows'.freeze
 
         include ::Windows::Helper
 
