@@ -1,8 +1,9 @@
 Skype App Cookbook CHANGELOG
 ============================
 
-v?.?.? (????-??-??)
--------------------
+Unreleased
+----------
+- Bump apt dependency from 2.x to 3.x
 
 v0.2.0 (2015-10-18)
 -------------------
