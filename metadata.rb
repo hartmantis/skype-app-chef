@@ -6,7 +6,7 @@ maintainer_email 'j@p4nt5.com'
 license          'apache2'
 description      'Installs Skype'
 long_description 'Installs Skype'
-version          '0.2.1'
+version          '0.3.0'
 
 depends          'dmg', '~> 2.2'
 depends          'windows', '~> 1.37'
